@@ -10,9 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var welcomeScroll: UIScrollView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        welcomeScroll.frame.size = CGSizeMake(320, 568)
+        welcomeScroll.contentSize = CGSizeMake(960, 568)
+
     }
 
     override func didReceiveMemoryWarning() {
