@@ -75,8 +75,9 @@
         <!--Navigation Controller-->
         <scene sceneID="tLP-0l-5RO">
             <objects>
-                <navigationController id="xMf-Ce-SiU" sceneMemberID="viewController">
+                <navigationController navigationBarHidden="YES" id="xMf-Ce-SiU" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="mqR-px-Fwe"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="xxc-zU-XKQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -109,7 +110,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                                 <connections>
-                                    <segue destination="7KW-UJ-rxU" kind="push" id="dhM-Ar-tIi"/>
+                                    <segue destination="7KW-UJ-rxU" kind="push" identifier="signInSegue" id="dhM-Ar-tIi"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Af2-05-ctX" userLabel="Create Button">
@@ -139,6 +140,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="sign_in3" id="YHH-3Y-eF2">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <animations/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="sign_in2" id="JBZ-dv-pwL">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <animations/>
+                            </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="sign_in1" id="ZL6-if-ZBj">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask"/>
@@ -147,12 +158,53 @@
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="uz2-Pa-LyT" appends="YES" id="fJf-yf-e8a"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="qYI-VH-JbW"/>
+                    <connections>
+                        <outlet property="didTapScreen" destination="uz2-Pa-LyT" id="Q2b-R2-kBT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DPM-b8-Ea9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="uz2-Pa-LyT">
+                    <connections>
+                        <action selector="didTapScreen:" destination="7KW-UJ-rxU" id="mH0-t2-dva"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1467" y="1788"/>
+            <point key="canvasLocation" x="1460" y="1795"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="5gN-j6-VPD">
+            <objects>
+                <viewController id="PDK-ct-dY9" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kxS-cc-tQl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="szt-TR-x6H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1843" y="1788"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Pmd-07-6DH">
+            <objects>
+                <viewController id="60N-ZQ-9bS" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fgf-a2-yFR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uHG-X9-2SK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2221" y="1788"/>
         </scene>
         <!--Create Account Root View Controller-->
         <scene sceneID="OnR-1P-Tf9">
@@ -180,7 +232,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                                 <connections>
-                                    <segue destination="Xmg-t0-Q3V" kind="push" id="ct8-ED-kXS"/>
+                                    <segue destination="Xmg-t0-Q3V" kind="push" identifier="createAccountSegue" id="ct8-ED-kXS"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -202,26 +254,96 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="create_account" id="8fO-Ln-TvU">
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="create5" id="hMc-2L-lWj">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <animations/>
                             </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="create4" id="cOt-QQ-Odn">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <animations/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="create3" id="tqq-gZ-oWa">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <animations/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="create2" id="BXs-qe-JIp">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <animations/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="create1" id="EJ6-0V-ohG">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <animations/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="create_account" id="8fO-Ln-TvU" userLabel="create0">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <animations/>
+                                <gestureRecognizers/>
+                            </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="5hR-pg-nys" appends="YES" id="Iwc-Rb-PEy"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="fZ0-5w-U2f"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="didTapScreen" destination="5hR-pg-nys" id="qKN-rt-zbd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K0E-bL-apn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="5hR-pg-nys">
+                    <connections>
+                        <action selector="didTapScreen:" destination="Xmg-t0-Q3V" id="Dsy-Jk-aah"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1460" y="1102"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="QP8-ME-O4G">
+            <objects>
+                <viewController id="bOZ-dR-que" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Lkd-a3-h9I">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xdB-il-gfw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1843" y="1102"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ILP-jg-JwU">
+            <objects>
+                <viewController id="CkJ-yd-Gc7" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="i8a-ea-69n">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VqE-4L-8qQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2221" y="1102"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jjH-hi-f2v">
             <objects>
-                <navigationController id="ku4-ga-AdT" sceneMemberID="viewController">
+                <navigationController navigationBarHidden="YES" id="ku4-ga-AdT" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="WJ8-2x-jOk"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="345-l0-9pV">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -238,16 +360,23 @@
         </scene>
     </scenes>
     <resources>
+        <image name="create1" width="320" height="568"/>
+        <image name="create2" width="320" height="568"/>
+        <image name="create3" width="320" height="568"/>
+        <image name="create4" width="320" height="568"/>
+        <image name="create5" width="320" height="568"/>
         <image name="create_account" width="320" height="568"/>
         <image name="logged_out" width="320" height="568"/>
         <image name="sign_in1" width="320" height="568"/>
+        <image name="sign_in2" width="320" height="568"/>
+        <image name="sign_in3" width="320" height="568"/>
         <image name="welcome1" width="320" height="568"/>
         <image name="welcome2" width="320" height="568"/>
         <image name="welcome3" width="320" height="568"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="ct8-ED-kXS"/>
         <segue reference="1AO-S1-0Jd"/>
-        <segue reference="dhM-Ar-tIi"/>
-        <segue reference="DCM-36-zjx"/>
+        <segue reference="8v5-t3-YYS"/>
     </inferredMetricsTieBreakers>
 </document>

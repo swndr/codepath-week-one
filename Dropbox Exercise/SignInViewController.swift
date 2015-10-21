@@ -10,10 +10,12 @@ import UIKit
 
 class SignInViewController: UIViewController {
 
+    @IBOutlet var didTapScreen: UITapGestureRecognizer!
+    
+     var progress = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,6 +23,12 @@ class SignInViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func didTapScreen(sender: AnyObject) {
+        progress++
+        if progress < self.view.subviews.count {
+            self.view.sendSubviewToBack(self.view.subviews.last!)
+        }
+    }
 
     /*
     // MARK: - Navigation

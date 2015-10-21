@@ -9,11 +9,21 @@
 import UIKit
 
 class CreateAccountViewController: UIViewController {
-
+    
+    @IBOutlet var didTapScreen: UITapGestureRecognizer!
+    
+    var progress = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    }
+    
+    
+    @IBAction func didTapScreen(sender: AnyObject) {
+        progress++
+        if progress < self.view.subviews.count {
+            self.view.sendSubviewToBack(self.view.subviews.last!)
+        }
     }
 
     override func didReceiveMemoryWarning() {

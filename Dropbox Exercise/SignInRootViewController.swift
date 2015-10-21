@@ -12,8 +12,7 @@ class SignInRootViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        performSegueWithIdentifier("signInSegue", sender: self)
     }
 
     override func didReceiveMemoryWarning() {
