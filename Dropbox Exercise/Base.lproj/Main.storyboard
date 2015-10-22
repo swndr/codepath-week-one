@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Ksc-sH-FuD">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
@@ -155,6 +155,14 @@
                                 <autoresizingMask key="autoresizingMask"/>
                                 <animations/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="XO5-v3-xWd">
+                                <rect key="frame" x="5" y="14" width="103" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <connections>
+                                    <action selector="backToWelcome:" destination="7KW-UJ-rxU" eventType="touchUpInside" id="SHo-sm-iVF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -164,6 +172,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="qYI-VH-JbW"/>
                     <connections>
+                        <outlet property="backToWelcomeButton" destination="XO5-v3-xWd" id="YcA-XD-46o"/>
                         <outlet property="didTapScreen" destination="uz2-Pa-LyT" id="Q2b-R2-kBT"/>
                     </connections>
                 </viewController>
@@ -174,37 +183,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1460" y="1795"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="5gN-j6-VPD">
-            <objects>
-                <viewController id="PDK-ct-dY9" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="kxS-cc-tQl">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="szt-TR-x6H" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1843" y="1788"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="Pmd-07-6DH">
-            <objects>
-                <viewController id="60N-ZQ-9bS" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="fgf-a2-yFR">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uHG-X9-2SK" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2221" y="1788"/>
+            <point key="canvasLocation" x="1481" y="1798"/>
         </scene>
         <!--Create Account Root View Controller-->
         <scene sceneID="OnR-1P-Tf9">
@@ -285,6 +264,14 @@
                                 <animations/>
                                 <gestureRecognizers/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5ze-Sj-XfC">
+                                <rect key="frame" x="6" y="9" width="98" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <connections>
+                                    <action selector="backToWelcome:" destination="Xmg-t0-Q3V" eventType="touchUpInside" id="BmD-k0-jXJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -296,6 +283,7 @@
                     <navigationItem key="navigationItem" id="fZ0-5w-U2f"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="backToWelcomeButton" destination="5ze-Sj-XfC" id="a8y-g8-K5H"/>
                         <outlet property="didTapScreen" destination="5hR-pg-nys" id="qKN-rt-zbd"/>
                     </connections>
                 </viewController>
@@ -315,28 +303,139 @@
                     <view key="view" contentMode="scaleToFill" id="Lkd-a3-h9I">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="terms" id="vgT-xS-8io">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <animations/>
+                            </imageView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xdB-il-gfw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1843" y="1102"/>
+            <point key="canvasLocation" x="1453" y="406"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="ILP-jg-JwU">
+        <!--Photos-->
+        <scene sceneID="VOL-8I-Ywx">
             <objects>
-                <viewController id="CkJ-yd-Gc7" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="i8a-ea-69n">
+                <viewController id="7QV-vo-odt" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ogl-5X-Sdg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="empty_photos" id="521-98-fXa">
+                                <rect key="frame" x="0.0" y="65" width="320" height="454"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <animations/>
+                            </imageView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Photos" image="photos_tab" id="wPU-uf-4ls"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VqE-4L-8qQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JNW-vf-pUn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2221" y="1102"/>
+            <point key="canvasLocation" x="2347" y="1172"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="gcD-lx-dIv">
+            <objects>
+                <viewController id="u4r-5q-me2" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="W6Y-cC-Ioz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="settings" id="tXP-wq-6K0">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="772"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <animations/>
+                            </imageView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Settings" image="settings_tab" id="t5V-pQ-1J2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dSt-Gu-Z8g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3111" y="1172"/>
+        </scene>
+        <!--Item 3-->
+        <scene sceneID="xyo-rp-LV1">
+            <objects>
+                <viewController id="wO7-qQ-N5U" userLabel="Item 3" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="a6g-wq-ZAf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="empty_favorites" id="fRb-PQ-N1l">
+                                <rect key="frame" x="0.0" y="65" width="320" height="454"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <animations/>
+                            </imageView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Favorites" image="favorites_tab" id="eze-bA-5T2" userLabel="Item 3"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rzy-vo-AKV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2719" y="1172"/>
+        </scene>
+        <!--Files-->
+        <scene sceneID="Zb1-Pu-hWn">
+            <objects>
+                <viewController title="Files" id="BQ4-Il-N0t" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9AO-Wh-FQi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="empty_files" id="aWI-vc-K9n">
+                                <rect key="frame" x="0.0" y="65" width="320" height="454"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <animations/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="files_tab" id="om8-2c-BUo">
+                                <rect key="frame" x="145" y="527" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <animations/>
+                            </imageView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Files" image="files_tab" id="RUx-eY-5yD"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZnM-9L-YuA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1955" y="1172"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Jod-46-tfX">
+            <objects>
+                <tabBarController id="Ksc-sH-FuD" sceneMemberID="viewController">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="uOW-pc-2Ft">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BQ4-Il-N0t" kind="relationship" relationship="viewControllers" id="FVC-Wr-5XH"/>
+                        <segue destination="7QV-vo-odt" kind="relationship" relationship="viewControllers" id="NPe-t9-uhG"/>
+                        <segue destination="wO7-qQ-N5U" kind="relationship" relationship="viewControllers" id="a70-SM-P1e"/>
+                        <segue destination="u4r-5q-me2" kind="relationship" relationship="viewControllers" id="jAO-L1-WN6"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dTr-rr-NnH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2535" y="350"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jjH-hi-f2v">
@@ -366,10 +465,19 @@
         <image name="create4" width="320" height="568"/>
         <image name="create5" width="320" height="568"/>
         <image name="create_account" width="320" height="568"/>
+        <image name="empty_favorites" width="320" height="454"/>
+        <image name="empty_files" width="320" height="454"/>
+        <image name="empty_photos" width="320" height="454"/>
+        <image name="favorites_tab" width="30" height="30"/>
+        <image name="files_tab" width="30" height="30"/>
         <image name="logged_out" width="320" height="568"/>
+        <image name="photos_tab" width="30" height="30"/>
+        <image name="settings" width="320" height="772"/>
+        <image name="settings_tab" width="30" height="30"/>
         <image name="sign_in1" width="320" height="568"/>
         <image name="sign_in2" width="320" height="568"/>
         <image name="sign_in3" width="320" height="568"/>
+        <image name="terms" width="320" height="568"/>
         <image name="welcome1" width="320" height="568"/>
         <image name="welcome2" width="320" height="568"/>
         <image name="welcome3" width="320" height="568"/>

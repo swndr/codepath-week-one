@@ -11,11 +11,13 @@ import UIKit
 class SignInViewController: UIViewController {
 
     @IBOutlet var didTapScreen: UITapGestureRecognizer!
+    @IBOutlet weak var backToWelcomeButton: UIButton!
     
-     var progress = 0
+    var images: [UIView] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        images = self.view.subviews.filter{$0 is UIImageView}
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,10 +25,16 @@ class SignInViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+
+    @IBAction func backToWelcome(sender: AnyObject) {
+        navigationController?.popViewControllerAnimated(true)
+    }
+
+    
     @IBAction func didTapScreen(sender: AnyObject) {
-        progress++
-        if progress < self.view.subviews.count {
-            self.view.sendSubviewToBack(self.view.subviews.last!)
+        if images.count > 1 {
+            self.view.sendSubviewToBack(images.last!)
+            images.removeLast()
         }
     }
 
