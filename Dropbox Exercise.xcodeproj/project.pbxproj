@@ -12,12 +12,12 @@
 		C26C2BCD1BD72F3B006970AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C26C2BCB1BD72F3B006970AC /* Main.storyboard */; };
 		C26C2BCF1BD72F3B006970AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C26C2BCE1BD72F3B006970AC /* Assets.xcassets */; };
 		C26C2BD21BD72F3B006970AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C26C2BD01BD72F3B006970AC /* LaunchScreen.storyboard */; };
-		C270486F1BD9366C00E787B3 /* termsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C270486E1BD9366C00E787B3 /* termsViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		C27048711BD93B2600E787B3 /* settingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27048701BD93B2600E787B3 /* settingsViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		C2A29D0C1BD74ED500A1AA3E /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A29D0B1BD74ED500A1AA3E /* CreateAccountViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		C2A29D0E1BD74EE200A1AA3E /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A29D0D1BD74EE200A1AA3E /* SignInViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		C2A29D101BD74F4A00A1AA3E /* CreateAccountRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A29D0F1BD74F4A00A1AA3E /* CreateAccountRootViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		C2A29D121BD74F5200A1AA3E /* SignInRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A29D111BD74F5200A1AA3E /* SignInRootViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		C270486F1BD9366C00E787B3 /* termsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C270486E1BD9366C00E787B3 /* termsViewController.swift */; };
+		C27048711BD93B2600E787B3 /* settingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27048701BD93B2600E787B3 /* settingsViewController.swift */; };
+		C2A29D0C1BD74ED500A1AA3E /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A29D0B1BD74ED500A1AA3E /* CreateAccountViewController.swift */; };
+		C2A29D0E1BD74EE200A1AA3E /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A29D0D1BD74EE200A1AA3E /* SignInViewController.swift */; };
+		C2A29D101BD74F4A00A1AA3E /* CreateAccountRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A29D0F1BD74F4A00A1AA3E /* CreateAccountRootViewController.swift */; };
+		C2A29D121BD74F5200A1AA3E /* SignInRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A29D111BD74F5200A1AA3E /* SignInRootViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -113,6 +113,7 @@
 				TargetAttributes = {
 					C26C2BC31BD72F3B006970AC = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = 5HYAKYSJ8A;
 					};
 				};
 			};
@@ -270,10 +271,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Dropbox Exercise/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wander.sam.Dropbox-Exercise";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -281,10 +285,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Dropbox Exercise/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wander.sam.Dropbox-Exercise";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

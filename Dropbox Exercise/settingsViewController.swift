@@ -14,7 +14,7 @@ class settingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        settingsScroll.contentSize = CGSizeMake(320, 772)
+        settingsScroll.contentSize = CGSizeMake(320, 872)
     }
 
     override func didReceiveMemoryWarning() {
