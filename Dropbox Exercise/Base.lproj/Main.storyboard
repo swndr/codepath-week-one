@@ -403,19 +403,19 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <animations/>
                                     </scrollView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="HNA-nN-HiR">
-                                        <rect key="frame" x="0.0" y="792" width="320" height="40"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <animations/>
-                                        <connections>
-                                            <segue destination="gsO-ZR-Gfo" kind="modal" id="2Um-y1-CO7"/>
-                                        </connections>
-                                    </button>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="settings" id="tXP-wq-6K0">
                                         <rect key="frame" x="0.0" y="63" width="320" height="772"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <animations/>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="HNA-nN-HiR">
+                                        <rect key="frame" x="0.0" y="758" width="320" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <animations/>
+                                        <connections>
+                                            <segue destination="ku4-ga-AdT" kind="modal" id="FS0-Ux-cKK"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <animations/>
                             </scrollView>
@@ -611,6 +611,7 @@
         <!--Settings-->
         <scene sceneID="PBy-VZ-iPy">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7b5-jV-zkh" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="j7Z-JQ-B2j" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Settings" image="settings_tab" id="t5V-pQ-1J2"/>
                     <toolbarItems/>
@@ -624,7 +625,6 @@
                         <segue destination="u4r-5q-me2" kind="relationship" relationship="rootViewController" id="1so-N0-WN3"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7b5-jV-zkh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3923" y="1456"/>
         </scene>
@@ -654,10 +654,9 @@
         <image name="welcome3" width="320" height="568"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="2Um-y1-CO7"/>
-        <segue reference="2i8-DW-niP"/>
-        <segue reference="ct8-ED-kXS"/>
         <segue reference="W3i-IS-DOH"/>
         <segue reference="8v5-t3-YYS"/>
+        <segue reference="ct8-ED-kXS"/>
+        <segue reference="2i8-DW-niP"/>
     </inferredMetricsTieBreakers>
 </document>
