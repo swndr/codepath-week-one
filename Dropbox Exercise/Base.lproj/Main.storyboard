@@ -176,6 +176,22 @@
                                     <segue destination="FHK-t0-UOY" kind="modal" animates="NO" id="cqN-T5-OMi"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" id="usC-O0-S8t">
+                                <rect key="frame" x="116" y="149" width="189" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" id="dPZ-Lu-JDl">
+                                <rect key="frame" x="116" y="106" width="189" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -286,22 +302,57 @@
                                     <action selector="backToWelcome:" destination="Xmg-t0-Q3V" eventType="touchUpInside" id="BmD-k0-jXJ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="tHN-pR-mb5" userLabel="View Terms">
-                                <rect key="frame" x="13" y="519" width="292" height="37"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="John" textAlignment="natural" minimumFontSize="17" id="eTk-mN-rDY">
+                                <rect key="frame" x="116" y="86" width="189" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                 <connections>
-                                    <segue destination="l6g-Ce-vWW" kind="modal" id="xLv-SQ-D8b"/>
+                                    <action selector="firstNameDidEndonExit:" destination="Xmg-t0-Q3V" eventType="editingDidEndOnExit" id="0nV-Me-Vcp"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Z9R-4G-zTY" userLabel="Agree">
-                                <rect key="frame" x="13" y="474" width="292" height="37"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Appleseed" textAlignment="natural" minimumFontSize="17" id="vee-On-cXu">
+                                <rect key="frame" x="116" y="130" width="189" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                 <connections>
-                                    <segue destination="FHK-t0-UOY" kind="modal" animates="NO" id="2i8-DW-niP"/>
+                                    <action selector="lastNameDidEndOnExit:" destination="Xmg-t0-Q3V" eventType="editingDidEndOnExit" id="lyo-og-96W"/>
                                 </connections>
-                            </button>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" id="6ew-Ew-p68">
+                                <rect key="frame" x="116" y="174" width="189" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
+                                <connections>
+                                    <action selector="emailAddressDidEndOnExit:" destination="Xmg-t0-Q3V" eventType="editingDidEndOnExit" id="wFH-1F-WSy"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Required" textAlignment="natural" minimumFontSize="17" id="dXL-2u-DgP">
+                                <rect key="frame" x="116" y="218" width="189" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
+                                <connections>
+                                    <action selector="passwordDidEndOnExit:" destination="Xmg-t0-Q3V" eventType="editingDidEndOnExit" id="MtR-Ul-6j6"/>
+                                </connections>
+                            </textField>
+                            <view contentMode="scaleToFill" id="eAZ-kZ-qh5">
+                                <rect key="frame" x="0.0" y="347" width="320" height="221"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.92549019607843142" green="0.94117647058823528" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -313,10 +364,14 @@
                     <navigationItem key="navigationItem" id="fZ0-5w-U2f"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="agreeButton" destination="Z9R-4G-zTY" id="sfo-8s-KtZ"/>
                         <outlet property="backToWelcomeButton" destination="5ze-Sj-XfC" id="a8y-g8-K5H"/>
                         <outlet property="didTapScreen" destination="5hR-pg-nys" id="qKN-rt-zbd"/>
-                        <outlet property="viewTermsButton" destination="tHN-pR-mb5" id="rWY-xf-O29"/>
+                        <outlet property="emailAddressField" destination="6ew-Ew-p68" id="8O7-cc-j8x"/>
+                        <outlet property="firstNameField" destination="eTk-mN-rDY" id="w1E-E2-YbD"/>
+                        <outlet property="lastNameField" destination="vee-On-cXu" id="Pnh-LG-slt"/>
+                        <outlet property="passwordField" destination="dXL-2u-DgP" id="iZf-AW-0Gd"/>
+                        <segue destination="l6g-Ce-vWW" kind="modal" identifier="openTerms" id="aby-YL-7xR"/>
+                        <segue destination="FHK-t0-UOY" kind="modal" identifier="createAccount" animates="NO" id="j64-JP-UIo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K0E-bL-apn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -657,6 +712,6 @@
         <segue reference="W3i-IS-DOH"/>
         <segue reference="8v5-t3-YYS"/>
         <segue reference="ct8-ED-kXS"/>
-        <segue reference="2i8-DW-niP"/>
+        <segue reference="j64-JP-UIo"/>
     </inferredMetricsTieBreakers>
 </document>

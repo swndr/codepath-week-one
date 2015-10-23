@@ -21,7 +21,6 @@ class termsViewController: UIViewController {
     @IBAction func didPressDone(sender: AnyObject) {
         // Close terms
         navigationController?.dismissViewControllerAnimated(true, completion: { () -> Void in
-        // do nothing
         })
     }
     
