@@ -12,6 +12,7 @@ class CreateAccountViewController: UIViewController {
     
     @IBOutlet var didTapScreen: UITapGestureRecognizer!
     @IBOutlet weak var backToWelcomeButton: UIButton!
+    @IBOutlet weak var createButton: UIButton!
     
     @IBOutlet weak var firstNameField: UITextField!
     @IBOutlet weak var lastNameField: UITextField!
@@ -20,6 +21,7 @@ class CreateAccountViewController: UIViewController {
     
     let optionMenu: UIAlertController = UIAlertController(title: nil, message: "Before you can complete your registration, you must accept the Dropbox Terms of Service", preferredStyle: .ActionSheet)
     var optionMenuBuilt = false
+    var acceptedTerms = false
     
     // Empty array for image subviews
     var images: [UIView] = []
@@ -35,6 +37,21 @@ class CreateAccountViewController: UIViewController {
         // Navigate back one step
         navigationController?.popViewControllerAnimated(true)
     }
+    
+    // Test whether all fields completed
+    @IBAction func firstNameEditingChanged(sender: AnyObject) {
+        checkFormCompletion()
+    }
+    @IBAction func lastNameEditingChanged(sender: AnyObject) {
+        checkFormCompletion()
+    }
+    @IBAction func emailAddressEditingChanged(sender: AnyObject) {
+        checkFormCompletion()
+    }
+    @IBAction func passwordEditingChanged(sender: AnyObject) {
+        checkFormCompletion()
+    }
+    
     
     // Progress through text fields by tapping 'Next'
     @IBAction func firstNameDidEndonExit(sender: AnyObject) {
@@ -53,13 +70,11 @@ class CreateAccountViewController: UIViewController {
         if !optionMenuBuilt {
             let deleteAction = UIAlertAction(title: "I Agree", style: .Default, handler: {
                 (alert: UIAlertAction!) -> Void in
-                print("Agree")
-                self.performSegueWithIdentifier("createAccount", sender: self)
+                self.acceptedTerms = true
             })
             
             let saveAction = UIAlertAction(title: "View Terms", style: .Default, handler: {
                 (alert: UIAlertAction!) -> Void in
-                print("Terms")
                 self.performSegueWithIdentifier("openTerms", sender: self)
             })
             
@@ -69,28 +84,43 @@ class CreateAccountViewController: UIViewController {
         }
         
         // Show the action sheet
-        self.presentViewController(optionMenu, animated: true, completion: nil)
+        showActionSheet()
     }
     
+    // Check no text fields are empty, and password is 8 or more chars
+    func checkFormCompletion() {
+        if firstNameField.text!.isEmpty || lastNameField.text!.isEmpty || emailAddressField.text!.isEmpty || passwordField.text!.isEmpty {
+           createButton.enabled = false
+        } else if passwordField.text?.characters.count >= 8 && acceptedTerms {
+            createButton.enabled = true
+        }
+    }
+    
+    // Show the T&Cs action sheet
+    func showActionSheet() {
+        presentViewController(optionMenu, animated: true, completion: nil)
+    }
+    
+    // Dismiss keyboard
     @IBAction func didTapScreen(sender: AnyObject) {
-        
         view.endEditing(true)
-//        if images.count == 2 {
-//            // Enable buttons in action sheet
-//            viewTermsButton.enabled = true
-//            agreeButton.enabled = true
-//        }
-//        
-//        if images.count > 1 {
-//            // Hide front subview image until last
-//            self.view.sendSubviewToBack(images.last!)
-//            images.removeLast()
-//        }
+    }
+    
+    // Create account if form validated
+    @IBAction func didPressCreateAccountButton(sender: AnyObject) {
+        self.performSegueWithIdentifier("createAccount", sender: self)
+    }
+    
+    // When dismissing terms, re=open action sheet
+    @IBAction func dismissTerms (segue:UIStoryboardSegue) {
+        // This wouldn't work unless use this delay thing I found
+        dispatch_async(dispatch_get_main_queue(), {
+            self.showActionSheet()
+        })
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 }

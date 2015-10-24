@@ -311,6 +311,7 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                 <connections>
                                     <action selector="firstNameDidEndonExit:" destination="Xmg-t0-Q3V" eventType="editingDidEndOnExit" id="0nV-Me-Vcp"/>
+                                    <action selector="firstNameEditingChanged:" destination="Xmg-t0-Q3V" eventType="editingChanged" id="g3g-iH-9kd"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Appleseed" textAlignment="natural" minimumFontSize="17" id="vee-On-cXu">
@@ -322,6 +323,7 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                 <connections>
                                     <action selector="lastNameDidEndOnExit:" destination="Xmg-t0-Q3V" eventType="editingDidEndOnExit" id="lyo-og-96W"/>
+                                    <action selector="lastNameEditingChanged:" destination="Xmg-t0-Q3V" eventType="editingChanged" id="LNX-ML-aHH"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" id="6ew-Ew-p68">
@@ -333,6 +335,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
                                 <connections>
                                     <action selector="emailAddressDidEndOnExit:" destination="Xmg-t0-Q3V" eventType="editingDidEndOnExit" id="wFH-1F-WSy"/>
+                                    <action selector="emailAddressEditingChanged:" destination="Xmg-t0-Q3V" eventType="editingChanged" id="9I1-oG-yKp"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Required" textAlignment="natural" minimumFontSize="17" id="dXL-2u-DgP">
@@ -344,15 +347,31 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                                 <connections>
                                     <action selector="passwordDidEndOnExit:" destination="Xmg-t0-Q3V" eventType="editingDidEndOnExit" id="MtR-Ul-6j6"/>
+                                    <action selector="passwordEditingChanged:" destination="Xmg-t0-Q3V" eventType="editingChanged" id="AaF-qn-QtT"/>
                                 </connections>
                             </textField>
                             <view contentMode="scaleToFill" id="eAZ-kZ-qh5">
                                 <rect key="frame" x="0.0" y="347" width="320" height="221"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
-                                <color key="backgroundColor" red="0.92549019607843142" green="0.94117647058823528" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.94117647058823528" green="0.95294117647058818" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="p5w-k0-LmW">
+                                <rect key="frame" x="244" y="27" width="82" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="Create">
+                                    <color key="titleColor" red="0.12785740553668357" green="0.61233569257436282" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="disabled">
+                                    <color key="titleColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressCreateAccountButton:" destination="Xmg-t0-Q3V" eventType="touchUpInside" id="sJw-nZ-4IK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -365,6 +384,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="backToWelcomeButton" destination="5ze-Sj-XfC" id="a8y-g8-K5H"/>
+                        <outlet property="createButton" destination="p5w-k0-LmW" id="mxP-vX-tzy"/>
                         <outlet property="didTapScreen" destination="5hR-pg-nys" id="qKN-rt-zbd"/>
                         <outlet property="emailAddressField" destination="6ew-Ew-p68" id="8O7-cc-j8x"/>
                         <outlet property="firstNameField" destination="eTk-mN-rDY" id="w1E-E2-YbD"/>
@@ -383,10 +403,10 @@
             </objects>
             <point key="canvasLocation" x="1460" y="1102"/>
         </scene>
-        <!--Terms View Controller-->
+        <!--Terms-->
         <scene sceneID="QP8-ME-O4G">
             <objects>
-                <viewController id="bOZ-dR-que" customClass="termsViewController" customModule="Dropbox_Exercise" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Terms" id="bOZ-dR-que" customClass="termsViewController" customModule="Dropbox_Exercise" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lkd-a3-h9I">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -401,7 +421,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                                 <connections>
-                                    <action selector="didPressDone:" destination="bOZ-dR-que" eventType="touchUpInside" id="wbx-jn-vPN"/>
+                                    <segue destination="JyQ-ia-JCz" kind="unwind" unwindAction="dismissTerms:" id="8Cx-Au-4sj"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -414,6 +434,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xdB-il-gfw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="JyQ-ia-JCz" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2511" y="742"/>
         </scene>

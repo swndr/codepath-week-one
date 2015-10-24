@@ -14,13 +14,17 @@ class termsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     @IBAction func didPressDone(sender: AnyObject) {
+        
+//        func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+//            let viewController = segue.destinationViewController
+//                viewController.showActionSheet()
+//        }
         // Close terms
         navigationController?.dismissViewControllerAnimated(true, completion: { () -> Void in
+            
         })
     }
     
