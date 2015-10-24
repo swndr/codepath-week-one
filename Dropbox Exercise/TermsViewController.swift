@@ -1,5 +1,5 @@
 //
-//  settingsViewController.swift
+//  termsViewController.swift
 //  Dropbox Exercise
 //
 //  Created by Sam Wander on 10/22/15.
@@ -8,20 +8,28 @@
 
 import UIKit
 
-class settingsViewController: UIViewController {
+class TermsViewController: UIViewController {
 
-    @IBOutlet weak var settingsScroll: UIScrollView!
+    @IBOutlet weak var doneButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        settingsScroll.contentSize = CGSizeMake(320, 872)
     }
 
+    @IBAction func didPressDone(sender: AnyObject) {
+        // Close terms
+        navigationController?.dismissViewControllerAnimated(true, completion: { () -> Void in
+            
+        })
+    }
+
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+
     /*
     // MARK: - Navigation
 
