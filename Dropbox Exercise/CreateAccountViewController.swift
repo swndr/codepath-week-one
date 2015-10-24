@@ -19,18 +19,61 @@ class CreateAccountViewController: UIViewController {
     @IBOutlet weak var emailAddressField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
+    // Aciton sheet
     let optionMenu: UIAlertController = UIAlertController(title: nil, message: "Before you can complete your registration, you must accept the Dropbox Terms of Service", preferredStyle: .ActionSheet)
     var optionMenuBuilt = false
     var acceptedTerms = false
     
-    // Empty array for image subviews
-    var images: [UIView] = []
+    // Password strength indicator
+    let redPlaceholder = UIView()
+    let orangePlaceholder = UIView()
+    let yellowPlaceholder = UIView()
+    let greenPlaceholder = UIView()
+    let redIndicator = UIView()
+    let orangeIndicator = UIView()
+    let yellowIndicator = UIView()
+    let greenIndicator = UIView()
+    
+    let passwordWeakColor = UIColor(red: 242/255, green: 0, blue: 0, alpha: 1)
+    let passwordSoSoColor = UIColor(red: 245/255, green: 122/255, blue: 0, alpha: 1)
+    let passwordGoodColor = UIColor(red: 252/255, green: 202/255, blue: 46/255, alpha: 1)
+    let passwordGreatColor = UIColor(red: 0, green: 188/255, blue: 0, alpha: 1)
+    
+    @IBOutlet weak var passwordStrengthLabel: UILabel!
+    
+    let options = UIViewAnimationOptions.CurveEaseIn
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Get all image subviews
-        images = self.view.subviews.filter{$0 is UIImageView}
+        // Build password strength indicator subviews
+        self.redPlaceholder.frame = CGRect(x: 15, y: 263, width: 70, height: 4)
+        self.redPlaceholder.backgroundColor = UIColor.lightGrayColor()
+        self.redPlaceholder.hidden = true
+        self.redIndicator.frame = CGRect(x: 15, y: 263, width: 0, height: 4)
+        self.redIndicator.backgroundColor = passwordWeakColor
+        self.orangePlaceholder.frame = CGRect(x: 90, y: 263, width: 70, height: 4)
+        self.orangePlaceholder.backgroundColor = UIColor.lightGrayColor()
+        self.orangePlaceholder.hidden = true
+        self.orangeIndicator.frame = CGRect(x: 90, y: 263, width: 0, height: 4)
+        self.orangeIndicator.backgroundColor = passwordSoSoColor
+        self.yellowPlaceholder.frame = CGRect(x: 164, y: 263, width: 70, height: 4)
+        self.yellowPlaceholder.backgroundColor = UIColor.lightGrayColor()
+        self.yellowPlaceholder.hidden = true
+        self.yellowIndicator.frame = CGRect(x: 164, y: 263, width: 0, height: 4)
+        self.yellowIndicator.backgroundColor = passwordGoodColor
+        self.greenPlaceholder.frame = CGRect(x: 240, y: 263, width: 70, height: 4)
+        self.greenPlaceholder.backgroundColor = UIColor.lightGrayColor()
+        self.greenPlaceholder.hidden = true
+        self.greenIndicator.frame = CGRect(x: 240, y: 263, width: 0, height: 4)
+        self.greenIndicator.backgroundColor = passwordGreatColor
+        self.view.addSubview(redPlaceholder)
+        self.view.addSubview(redIndicator)
+        self.view.addSubview(orangePlaceholder)
+        self.view.addSubview(orangeIndicator)
+        self.view.addSubview(yellowPlaceholder)
+        self.view.addSubview(yellowIndicator)
+        self.view.addSubview(greenPlaceholder)
+        self.view.addSubview(greenIndicator)
     }
     
     @IBAction func backToWelcome(sender: AnyObject) {
@@ -49,6 +92,7 @@ class CreateAccountViewController: UIViewController {
         checkFormCompletion()
     }
     @IBAction func passwordEditingChanged(sender: AnyObject) {
+        adjustPasswordIndicator(passwordField.text!.characters.count) // Send password length to determine strength
         checkFormCompletion()
     }
     
@@ -71,6 +115,7 @@ class CreateAccountViewController: UIViewController {
             let deleteAction = UIAlertAction(title: "I Agree", style: .Default, handler: {
                 (alert: UIAlertAction!) -> Void in
                 self.acceptedTerms = true
+                self.checkFormCompletion()
             })
             
             let saveAction = UIAlertAction(title: "View Terms", style: .Default, handler: {
@@ -85,6 +130,73 @@ class CreateAccountViewController: UIViewController {
         
         // Show the action sheet
         showActionSheet()
+    }
+    
+    // Animate the password strength indicator
+    func adjustPasswordIndicator(passwordLength: Int) {
+        switch passwordLength
+        {
+        case 0:
+            passwordStrengthLabel.text = ""
+            self.redPlaceholder.hidden = true
+            self.orangePlaceholder.hidden = true
+            self.yellowPlaceholder.hidden = true
+            self.greenPlaceholder.hidden = true
+            UIView.animateWithDuration(0.1, delay: 0.0, options: options, animations: { () -> Void in
+                self.redIndicator.frame = CGRect(x: 15, y: 263, width: 0, height: 4)
+                self.orangeIndicator.frame = CGRect(x: 90, y: 263, width: 0, height: 4)
+                self.yellowIndicator.frame = CGRect(x: 164, y: 263, width: 0, height: 4)
+                self.greenIndicator.frame = CGRect(x: 240, y: 263, width: 0, height: 4)
+                }, completion: { finished in
+            })
+        case 1...3:
+            passwordStrengthLabel.text = "Weak"
+            passwordStrengthLabel.textColor = passwordWeakColor
+            self.redPlaceholder.hidden = false
+            self.orangePlaceholder.hidden = false
+            self.yellowPlaceholder.hidden = false
+            self.greenPlaceholder.hidden = false
+            self.greenPlaceholder.alpha = 1.0
+            UIView.animateWithDuration(0.5, delay: 0.0, options: options, animations: { () -> Void in
+                self.redIndicator.frame = CGRect(x: 15, y: 263, width: 70, height: 4)
+                self.orangeIndicator.frame = CGRect(x: 90, y: 263, width: 0, height: 4)
+                self.yellowIndicator.frame = CGRect(x: 164, y: 263, width: 0, height: 4)
+                self.greenIndicator.frame = CGRect(x: 240, y: 263, width: 0, height: 4)
+                }, completion: { finished in
+            })
+        case 4...6:
+            passwordStrengthLabel.text = "So-So"
+            passwordStrengthLabel.textColor = passwordSoSoColor
+            UIView.animateWithDuration(0.5, delay: 0.0, options: options, animations: { () -> Void in
+                self.redIndicator.frame = CGRect(x: 15, y: 263, width: 70, height: 4)
+                self.orangeIndicator.frame = CGRect(x: 90, y: 263, width: 70, height: 4)
+                self.yellowIndicator.frame = CGRect(x: 164, y: 263, width: 0, height: 4)
+                self.greenIndicator.frame = CGRect(x: 240, y: 263, width: 0, height: 4)
+                }, completion: { finished in
+            })
+        case 7...10:
+            passwordStrengthLabel.text = "Good"
+            passwordStrengthLabel.textColor = passwordGoodColor
+            UIView.animateWithDuration(0.5, delay: 0.0, options: options, animations: { () -> Void in
+                self.redIndicator.frame = CGRect(x: 15, y: 263, width: 70, height: 4)
+                self.orangeIndicator.frame = CGRect(x: 90, y: 263, width: 70, height: 4)
+                self.yellowIndicator.frame = CGRect(x: 164, y: 263, width: 70, height: 4)
+                self.greenIndicator.frame = CGRect(x: 240, y: 263, width: 0, height: 4)
+                }, completion: { finished in
+            })
+        case 8...20:
+            passwordStrengthLabel.text = "Great!"
+            passwordStrengthLabel.textColor = passwordGreatColor
+            UIView.animateWithDuration(0.5, delay: 0.0, options: options, animations: { () -> Void in
+                self.redIndicator.frame = CGRect(x: 15, y: 263, width: 70, height: 4)
+                self.orangeIndicator.frame = CGRect(x: 90, y: 263, width: 70, height: 4)
+                self.yellowIndicator.frame = CGRect(x: 164, y: 263, width: 70, height: 4)
+                self.greenIndicator.frame = CGRect(x: 240, y: 263, width: 70, height: 4)
+                }, completion: { finished in
+            })
+        default:
+            break
+        }
     }
     
     // Check no text fields are empty, and password is 8 or more chars
