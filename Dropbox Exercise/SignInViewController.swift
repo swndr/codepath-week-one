@@ -13,17 +13,16 @@ class SignInViewController: UIViewController {
     @IBOutlet var didTapScreen: UITapGestureRecognizer!
     @IBOutlet weak var backToWelcomeButton: UIButton!
     @IBOutlet weak var signInButton: UIButton!
+    @IBOutlet weak var forgotPasswordButton: UIButton!
     
-    // Empty array for image subviews
-    var images: [UIView] = []
+    @IBOutlet weak var emailAddressField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    
+    let optionMenu: UIAlertController = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
+    var optionMenuBuilt = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Get all image subviews
-        images = self.view.subviews.filter{$0 is UIImageView}
-        
-        // Disable sign in button
-        signInButton.enabled = false
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,20 +35,59 @@ class SignInViewController: UIViewController {
         // Navigate back one step
         navigationController?.popViewControllerAnimated(true)
     }
-
     
-    @IBAction func didTapScreen(sender: AnyObject) {
-        
-        if images.count == 2 {
-            // Enable sign in button
+    // Test whether all fields completed
+    @IBAction func emailAddressEditingChanged(sender: AnyObject) {
+        checkFormCompletion()
+    }
+    
+    @IBAction func passwordEditingChanged(sender: AnyObject) {
+        checkFormCompletion()
+    }
+    
+    // Progress through text fields by tapping 'Next'
+    @IBAction func emailAddressDidEndOnExit(sender: AnyObject) {
+        self.passwordField.becomeFirstResponder()
+    }
+    @IBAction func passwordDidEndOnEditing(sender: AnyObject) {
+        view.endEditing(true)
+    }
+    
+    @IBAction func didPressForgotPasswordButton(sender: AnyObject) {
+
+        if !optionMenuBuilt {
+            let deleteAction = UIAlertAction(title: "Forgot Password", style: .Default, handler: {
+                (alert: UIAlertAction!) -> Void in
+            })
+            
+            let saveAction = UIAlertAction(title: "Single Sign-On", style: .Default, handler: {
+                (alert: UIAlertAction!) -> Void in
+            })
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: {
+                (alert: UIAlertAction!) -> Void in
+            })
+            
+            optionMenu.addAction(deleteAction)
+            optionMenu.addAction(saveAction)
+            optionMenu.addAction(cancelAction)
+            optionMenuBuilt = true
+        }
+    
+        presentViewController(optionMenu, animated: true, completion: nil)
+    }
+    
+    // Check no text fields are empty, and password is 8 or more chars
+    func checkFormCompletion() {
+        if emailAddressField.text!.isEmpty || passwordField.text!.isEmpty {
+            signInButton.enabled = false
+        } else if passwordField.text?.characters.count >= 8 {
             signInButton.enabled = true
         }
-
-        if images.count > 1 {
-        // Hide front subview image until last
-            self.view.sendSubviewToBack(images.last!)
-            images.removeLast()
-        }
+    }
+    
+    @IBAction func didTapScreen(sender: AnyObject) {
+        view.endEditing(true)
     }
 
     /*
