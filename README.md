@@ -6,7 +6,7 @@ CodePath iOS for Designers: Week One
 
 I spent about 10 hours on this.
 
-Completed all the basic assignment plus some extras:
+Completed basic assignment plus some extras:
 * Swipe through intro screen, plus both the sign in buttons work here (not showing video)
 * Added text fields to both forms, with appropriate keyboard settings (e.g capitaliazation, email, secure entry)
 * Added password strength indicator that works, based on length
