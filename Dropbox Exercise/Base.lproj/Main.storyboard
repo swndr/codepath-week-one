@@ -472,8 +472,20 @@
                                 <autoresizingMask key="autoresizingMask"/>
                                 <animations/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ymz-hV-5gy">
-                                <rect key="frame" x="123" y="450" width="74" height="33"/>
+                            <view contentMode="scaleToFill" id="RLg-ys-th9">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.92549019607843142" green="0.94117647058823528" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Photos" id="BkX-C1-mz6">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="phQ-bN-INV">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ymz-hV-5gy">
+                                <rect key="frame" x="230" y="5" width="74" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
@@ -484,13 +496,11 @@
                                     <action selector="didPressImportButton:" destination="7QV-vo-odt" eventType="touchUpInside" id="12O-7U-pUo"/>
                                 </connections>
                             </button>
-                        </subviews>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Photos" id="BkX-C1-mz6"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="backgroundWash" destination="RLg-ys-th9" id="KiD-Xz-xYg"/>
                         <outlet property="importButton" destination="Ymz-hV-5gy" id="tL4-aK-6sG"/>
                     </connections>
                 </viewController>
@@ -723,7 +733,6 @@
         <!--Settings-->
         <scene sceneID="PBy-VZ-iPy">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7b5-jV-zkh" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="j7Z-JQ-B2j" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Settings" image="settings_tab" id="t5V-pQ-1J2"/>
                     <toolbarItems/>
@@ -737,6 +746,7 @@
                         <segue destination="u4r-5q-me2" kind="relationship" relationship="rootViewController" id="1so-N0-WN3"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7b5-jV-zkh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3923" y="1456"/>
         </scene>
