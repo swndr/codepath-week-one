@@ -14,4 +14,4 @@ Completed basic assignment plus some extras:
 * Logic for enabling 'Create' button based on form completion and agreeing to terms
 * Logic for enabling 'Sign In' button based on form completion and password length
 * Used real action sheets on both forms
-* Added way to open camera roll from the Photos tab, though you can't actually import anything
+* Added way to open camera roll from the Photos tab and add images to a grid (but only one by one as multi-select not handled by the default picker)
